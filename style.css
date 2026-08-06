@@ -1,0 +1,964 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    background:#0f0b08;
+    color:#fff;
+
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:#120d09;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+}
+
+
+
+.logo{
+
+    font-size:30px;
+    font-weight:800;
+
+}
+
+
+.logo span{
+
+    color:#d4a373;
+
+}
+
+
+
+.nav-links{
+
+    display:flex;
+    gap:30px;
+
+    list-style:none;
+
+}
+
+
+
+.nav-links a{
+
+    color:white;
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-links a:hover{
+
+    color:#d4a373;
+
+}
+
+
+
+
+/* BUTTON */
+
+
+.btn{
+
+    background:#d4a373;
+
+    color:#120d09;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    display:inline-block;
+
+    transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(212,163,115,.4);
+
+}
+
+
+
+.whatsapp-btn{
+
+    background:#25D366;
+
+    color:white;
+
+}
+
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+    min-height:90vh;
+
+    padding:80px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+
+
+.hero-content{
+
+    max-width:650px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:60px;
+
+    line-height:1.2;
+
+}
+
+
+
+.hero h1 span{
+
+    color:#d4a373;
+
+}
+
+
+
+.hero p{
+
+    margin:25px 0;
+
+    color:#c9c1ba;
+
+    font-size:18px;
+
+}
+
+
+
+.buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+
+
+
+
+/* HERO CARD */
+
+
+.hero-card{
+
+    background:#1c1410;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 0 40px rgba(212,163,115,.15);
+
+}
+
+
+
+.circle{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    margin:25px auto;
+
+
+    background:
+    conic-gradient(
+    #d4a373 98%,
+    #38281d 0
+    );
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.circle span{
+
+    width:170px;
+
+    height:170px;
+
+    background:#0f0b08;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:45px;
+
+    font-weight:800;
+
+    color:#d4a373;
+
+}
+
+
+
+
+
+/* SECTIONS */
+
+
+section{
+
+    padding:80px 8%;
+
+}
+
+
+
+section h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:45px;
+
+    color:#d4a373;
+
+}
+
+
+
+
+
+/* CARDS */
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.card{
+
+    background:#1c1410;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,163,115,.15);
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.4);
+
+}
+
+
+
+.card p{
+
+    color:#c9c1ba;
+
+    margin:15px 0;
+
+}
+
+
+
+.card a{
+
+    color:#d4a373;
+
+    text-decoration:none;
+
+}
+
+
+
+
+
+
+
+/* PRICING */
+
+
+.pricing-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.price-card{
+
+    background:#1c1410;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.price-card h2{
+
+    font-size:45px;
+
+    color:#d4a373;
+
+}
+
+
+
+.price-card ul{
+
+    list-style:none;
+
+    margin:25px 0;
+
+}
+
+
+
+.price-card li{
+
+    margin:12px;
+
+    color:#ddd;
+
+}
+
+
+
+.price-card a{
+
+    background:#d4a373;
+
+    color:#120d09;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* CONTACT */
+
+
+form{
+
+    max-width:600px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+input,
+textarea{
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border:none;
+
+    background:#1c1410;
+
+    color:white;
+
+}
+
+
+
+textarea{
+
+    height:150px;
+
+}
+
+
+
+button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#d4a373;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+.bottom{
+
+    display:block;
+
+    width:max-content;
+
+    margin:25px auto;
+
+}
+
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    background:#080604;
+
+    color:#aaa;
+
+}
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+.nav-links{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+.hero h1{
+
+    font-size:40px;
+
+}
+
+
+.cards,
+.pricing-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.buttons{
+
+    justify-content:center;
+
+}
+
+
+}
+/* Cafe Image */
+
+.cafe-image{
+
+    width:300px;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Better Hero Card */
+
+.hero-card{
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+
+
+
+/* Growth Package Highlight */
+
+.price-card:nth-child(2){
+
+    border:2px solid #d4a373;
+
+    box-shadow:0 0 30px rgba(212,163,115,0.35);
+
+    transform:scale(1.05);
+
+    position:relative;
+
+}
+
+
+/* Popular Badge */
+
+.price-card:nth-child(2)::before{
+
+    content:"POPULAR";
+
+    position:absolute;
+
+    top:-15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#d4a373;
+
+    color:#120d09;
+
+    padding:6px 18px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+/* WHY US */
+
+.why-us{
+
+    background:#120d09;
+
+}
+
+
+.why-us .card{
+
+    text-align:center;
+
+}
+
+
+.why-us .card h3{
+
+    color:#d4a373;
+
+}
+/* SHOWCASE */
+
+.showcase{
+
+    background:#0b0806;
+
+}
+
+
+.showcase .card{
+
+    border:1px solid rgba(212,163,115,0.2);
+
+}
+
+
+.showcase .card h3{
+
+    color:#d4a373;
+
+}
+select{
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border:none;
+
+    background:#1c1410;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+
+
+select option{
+
+    background:#1c1410;
+
+    color:white;
+
+}
+/* ABOUT */
+
+.about{
+
+    background:#120d09;
+
+}
+
+
+.about-box{
+
+    max-width:800px;
+
+    margin:auto;
+
+    background:#1c1410;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    color:#c9c1ba;
+
+    line-height:1.8;
+
+}
+.circle{
+
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    margin:25px auto;
+
+    background:
+    conic-gradient(
+        #d4a373 98%,
+        #38281d 0
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.circle span{
+
+    width:170px;
+    height:170px;
+
+    background:#0f0b08;
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:45px;
+    font-weight:800;
+    color:#d4a373;
+
+}
+/* HOW IT WORKS */
+
+
+.how-it-works{
+
+    background:#120d09;
+
+}
+
+
+
+.steps{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.step-card{
+
+    background:#1c1410;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid rgba(212,163,115,.15);
+
+    transition:.3s;
+
+}
+
+
+
+.step-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.step-card h3{
+
+    color:#d4a373;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.step-card p{
+
+    color:#c9c1ba;
+
+}
+
+
+
+@media(max-width:900px){
+
+.steps{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+.how-it-works h2{
+
+    color:white;
+
+}
+footer{
+
+    background:#080604;
+
+    padding:35px 8%;
+
+    text-align:center;
+
+    color:#c9c1ba;
+
+    border-top:1px solid rgba(212,163,115,0.2);
+
+    font-size:15px;
+
+    letter-spacing:0.5px;
+
+}
+
+
+footer p{
+
+    margin:0;
+
+    transition:.3s;
+
+}
+
+
+footer p:hover{
+
+    color:#d4a373;
+
+}
+.logo{
+
+    font-size:32px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    color:white;
+
+}
+
+
+.logo span{
+
+    color:#d4a373;
+
+}
