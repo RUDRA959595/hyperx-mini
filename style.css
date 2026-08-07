@@ -1457,3 +1457,344 @@ footer {
     line-height: 1.7;
     letter-spacing: 0.2px;
 }
+/* =========================================
+   HYPERX MINI - FINAL RESPONSIVE POLISH
+   Desktop + Mobile
+   ========================================= */
+
+/* ---------- GLOBAL ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ---------- CONTAINERS ---------- */
+
+section {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+section h2 {
+    text-align: center;
+    line-height: 1.2;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 20px;
+    background: #d6a064;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero h1 {
+    max-width: 750px;
+    line-height: 1.08;
+}
+
+.hero-description {
+    max-width: 650px;
+    line-height: 1.7;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.card,
+.price-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover,
+.price-card:hover {
+    transform: translateY(-7px);
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.card a,
+.price-card a,
+.hero a {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.card a:hover,
+.price-card a:hover,
+.hero a:hover {
+    transform: translateY(-2px);
+}
+
+/* Touch devices */
+
+@media (hover: none) {
+
+    .card:hover,
+    .price-card:hover {
+        transform: none;
+    }
+
+    .card a:active,
+    .price-card a:active,
+    .hero a:active {
+        transform: scale(0.97);
+    }
+}
+
+
+/* =========================================
+   CONTACT FORM
+   ========================================= */
+
+.contact-form {
+    width: min(620px, calc(100% - 30px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.contact-form button {
+    min-height: 52px;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+        max-width: 650px;
+    }
+
+    .cards,
+    .pricing-container {
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* General */
+
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 11vw, 52px);
+        line-height: 1.05;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+
+    /* Cards */
+
+    .cards,
+    .pricing-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card,
+    .price-card {
+        width: 100%;
+        padding: 23px;
+        border-radius: 16px;
+    }
+
+    .card h3,
+    .price-card h3 {
+        font-size: 20px;
+    }
+
+
+    /* Service buttons */
+
+    .card a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 13px 16px;
+    }
+
+
+    /* Pricing */
+
+    .price-card h2 {
+        font-size: 32px;
+    }
+
+    .price-card a {
+        width: 100%;
+        padding: 14px 16px;
+    }
+
+
+    /* About */
+
+    .about-box {
+        padding: 20px;
+    }
+
+    .about-box p {
+        line-height: 1.7;
+    }
+
+    .about-highlight {
+        font-weight: 600;
+    }
+
+
+    /* Contact */
+
+    .contact-form {
+        width: calc(100% - 4px);
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 17px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .contact-form textarea {
+        min-height: 130px;
+    }
+
+    .contact-form button {
+        min-height: 52px;
+        font-size: 16px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 25px 16px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {} 
+
+     section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
