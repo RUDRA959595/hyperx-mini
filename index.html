@@ -640,93 +640,22 @@ Choose Plan
 
 <!-- CONTACT -->
 
+<form id="contactForm" class="contact-form">
 
-<section id="contact">
-
-
-<h2>
-Start Your Project
-</h2>
-
-
-<form 
-name="contact"
-method="POST"
-data-netlify="true"
-action="/success.html">
-
-<input type="hidden" name="form-name" value="contact">
-
-<input 
-type="text"
-name="name"
-placeholder="Your Name"
-required>
-
-
-
-<input
-type="text"
-name="business"
-placeholder="Business Name"
-required>
-
-
-
-
-<input
-type="email"
-name="email"
-placeholder="Your Email"
-required>
-
-
-
-
-
-<select name="package">
-
-<option>
-Select Package
-</option>
-
-<option>
-Starting Package - ₹499
-</option>
-
-
-<option>
-Growth Package - ₹1499
-</option>
-
-
-<option>
-Premium Package - ₹1999
-</option>
-
-
-</select>
-
-
-
-
-
-<textarea
-name="message"
-placeholder="Tell us about your business">
-</textarea>
-
-
-
-
-<button type="submit">
-Send Request
-</button>
-
-
-</form>
-
-
+    <input type="text" id="name" placeholder="Your Name" required> 
+    
+<input type="tel" id="phone" placeholder="Your Phone Number" required>
+ <input type="text" id="business" placeholder="Business Name" required> 
+ <select id="plan" required> 
+    <option value="" disabled selected>Select a Plan</option> 
+    <option value="Starting package - ₹499">Starting package - ₹499</option> 
+    <option value="Growth package - ₹1499">Growth package - ₹1499</option>
+     <option value="Premium package - ₹1999">Premium package - ₹1999</option>
+     
+    </select> 
+              <textarea id="details" placeholder="Tell us about your project" required></textarea> 
+              <button type="submit">Send on WhatsApp</button>
+             </form> <script> document.getElementById("contactForm").addEventListener("submit", function(event) { event.preventDefault(); const name = document.getElementById("name").value; const phone = document.getElementById("phone").value; const business = document.getElementById("business").value; const plan = document.getElementById("plan").value; const details = document.getElementById("details").value; const message = "Hello HyperX Mini!%0A%0A" + "*New Project Enquiry*%0A%0A" + "Name: " + encodeURIComponent(name) + "%0A" + "Phone: " + encodeURIComponent(phone) + "%0A" + "Business: " + encodeURIComponent(business) + "%0A" + "Selected Plan: " + encodeURIComponent(plan) + "%0A" + "Project Details: " + encodeURIComponent(details); const whatsappURL = "https://wa.me/918726601795?text=" + message; window.open(whatsappURL, "_blank"); }); </script>
 
 
 <footer>

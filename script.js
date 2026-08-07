@@ -1,150 +1,116 @@
-// HyperX Mini v2 JavaScript
+// ==============================
+// SMOOTH SCROLLING
+// ==============================
 
-
-// Smooth scrolling
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", function(e){
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
 
         const target = document.querySelector(
             this.getAttribute("href")
         );
 
-
-        if(target){
-
+        if (target) {
             e.preventDefault();
 
             target.scrollIntoView({
-
-                behavior:"smooth"
-
+                behavior: "smooth",
+                block: "start"
             });
-
         }
-
     });
-
 });
 
 
-
-
-
-// Scroll animation
-
+// ==============================
+// SCROLL ANIMATIONS
+// ==============================
 
 const elements = document.querySelectorAll(
-".card, .price-card, .hero-card"
+    ".card, .price-card, .hero-card"
 );
 
+const observer = new IntersectionObserver(
+    function (entries) {
 
+        entries.forEach(function (entry) {
 
-const observer = new IntersectionObserver((entries)=>{
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
 
+        });
 
-entries.forEach(entry=>{
-
-
-    if(entry.isIntersecting){
-
-        entry.target.classList.add("show");
-
+    },
+    {
+        threshold: 0.2
     }
+);
 
-
-});
-
-
-},
-{
-    threshold:0.2
-});
-
-
-
-elements.forEach(element=>{
-
+elements.forEach(function (element) {
     observer.observe(element);
-
 });
 
 
-
-
-
-
-
-// Add animation class
-
+// ==============================
+// ANIMATION CSS
+// ==============================
 
 const style = document.createElement("style");
 
-
-style.innerHTML = `
-
-
+style.textContent = `
 .card,
 .price-card,
-.hero-card{
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:0.7s;
-
+.hero-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-
-
-.show{
-
-    opacity:1;
-
-    transform:translateY(0);
-
+.card.show,
+.price-card.show,
+.hero-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
-
-
-
 `;
-
-
 
 document.head.appendChild(style);
 
 
+// ==============================
+// WHATSAPP CONTACT FORM
+// ==============================
 
+const form = document.querySelector("#contactForm");
 
+if (form) {
 
+    form.addEventListener("submit", function (e) {
 
+        e.preventDefault();
 
-// Form submit message
+        const name = document.querySelector("#name").value.trim();
+        const phone = document.querySelector("#phone").value.trim();
+        const business = document.querySelector("#business").value.trim();
+        const plan = document.querySelector("#plan").value;
+        const details = document.querySelector("#details").value.trim();
 
+        const message =
+            "Hello HyperX Mini!\n\n" +
+            "New Project Enquiry\n\n" +
+            "Name: " + name + "\n" +
+            "Phone: " + phone + "\n" +
+            "Business: " + business + "\n" +
+            "Selected Plan: " + plan + "\n\n" +
+            "Project Details:\n" +
+            details;
 
-const form = document.querySelector("form");
+        const whatsappURL =
+            "https://wa.me/918726601795?text=" +
+            encodeURIComponent(message);
 
+        window.open(whatsappURL, "_blank");
 
-if(form){
-
-
-form.addEventListener("submit",()=>{
-
-
-    setTimeout(()=>{
-
-
-        alert(
-        "Thank you! HyperX Mini will contact you soon."
-        );
-
-
-    },500);
-
-
-});
-
-
+        window.location.href = "success.html";
+    });
 }

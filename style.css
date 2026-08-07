@@ -962,3 +962,120 @@ footer p:hover{
     color:#d4a373;
 
 }
+/* =========================
+   HYPERX MINI CONTACT FORM
+   ========================= */
+
+.contact-form {
+    width: min(600px, 90%);
+    margin: 40px auto;
+    padding: 32px;
+
+    background: #15100d;
+    border: 1px solid rgba(218, 164, 102, 0.25);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Inputs */
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px 17px;
+
+    background: #0d0907;
+    color: #ffffff;
+
+    border: 1px solid rgba(218, 164, 102, 0.25);
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+    transition: 0.25s ease;
+}
+
+/* Placeholder */
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #9d9188;
+}
+
+/* Focus */
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #daa466;
+    box-shadow: 0 0 0 3px rgba(218, 164, 102, 0.10);
+}
+
+/* Select */
+
+.contact-form select {
+    cursor: pointer;
+}
+
+.contact-form select option {
+    background: #15100d;
+    color: #ffffff;
+}
+
+/* Message box */
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* WhatsApp button */
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #25d366;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.20);
+}
+
+.contact-form button:active {
+    transform: translateY(0);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .contact-form {
+        width: calc(100% - 30px);
+        padding: 22px;
+    }
+
+}
