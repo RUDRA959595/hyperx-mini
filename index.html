@@ -340,113 +340,6 @@ content="QR Menu, Cafe Website, Business Website, Video Editing, HyperX Mini">
 
 
 
-<!-- PRICING -->
-
-<section id="pricing">
-
-    <h2>
-        Packages
-    </h2>
-
-
-    <div class="pricing-container">
-
-
-        <!-- STARTING PACKAGE -->
-
-        <div class="price-card">
-
-            <h3>
-                Starting Package
-            </h3>
-
-            <h2>
-                ₹499
-            </h2>
-
-
-            <ul>
-                <li>QR Digital Menu Setup</li>
-                <li>Mobile-Friendly Design</li>
-                <li>Basic Business Profile</li>
-            </ul>
-
-
-            <a href="#contact" data-plan="Starting Package - ₹499">
-                Choose Plan
-            </a>
-
-        </div>
-
-
-
-        <!-- GROWTH PACKAGE -->
-
-        <div class="price-card">
-
-            <h3>
-                Growth Package
-            </h3>
-
-            <h2>
-                ₹1499
-            </h2>
-
-
-            <ul>
-
-                <li><strong>Everything in Starting Package +</strong></li>
-                <li>1 Promotional Reel</li>
-                <li>WhatsApp Business Integration</li>
-                <li>Professional Business Website</li>
-
-            </ul>
-
-
-            <a href="#contact" data-plan="Growth Package - ₹1499">
-                Choose Plan
-            </a>
-
-        </div>
-
-
-
-        <!-- PREMIUM PACKAGE -->
-
-        <div class="price-card">
-
-            <h3>
-                Premium Package
-            </h3>
-
-            <h2>
-                ₹1999
-            </h2>
-
-
-            <ul>
-
-                <li><strong>Everything in Growth Package ++</strong></li>
-                <li>3 Promotional Reels</li>
-                <li>Advanced Business Website</li>
-                <li>Complete Digital Branding</li>
-
-            </ul>
-
-
-            <a href="#contact" data-plan="Premium Package - ₹1999">
-                Choose Plan
-            </a>
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
 
 
 <!-- CONTACT -->
@@ -457,13 +350,6 @@ content="QR Menu, Cafe Website, Business Website, Video Editing, HyperX Mini">
     
 <input type="tel" id="phone" placeholder="Your Phone Number" required>
  <input type="text" id="business" placeholder="Business Name" required> 
- <select id="plan" required> 
-    <option value="" disabled selected>Select a Plan</option> 
-    <option value="Starting package - ₹499">Starting package - ₹499</option> 
-    <option value="Growth package - ₹1499">Growth package - ₹1499</option>
-     <option value="Premium package - ₹1999">Premium package - ₹1999</option>
-     
-    </select> 
               <textarea id="details" placeholder="Tell us about your project" required></textarea> 
               <button type="submit">Send on WhatsApp</button>
              </form> <script> document.getElementById("contactForm").addEventListener("submit", function(event) { event.preventDefault(); const name = document.getElementById("name").value; const phone = document.getElementById("phone").value; const business = document.getElementById("business").value; const plan = document.getElementById("plan").value; const details = document.getElementById("details").value; const message = "Hello HyperX Mini!%0A%0A" + "*New Project Enquiry*%0A%0A" + "Name: " + encodeURIComponent(name) + "%0A" + "Phone: " + encodeURIComponent(phone) + "%0A" + "Business: " + encodeURIComponent(business) + "%0A" + "Selected Plan: " + encodeURIComponent(plan) + "%0A" + "Project Details: " + encodeURIComponent(details); const whatsappURL = "https://wa.me/918726601795?text=" + message; window.open(whatsappURL, "_blank"); }); </script>
