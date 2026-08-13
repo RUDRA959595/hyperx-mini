@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Start Your Project | HyperX Mini</title>
+
+    <meta name="description"
+        content="Start your digital project with HyperX Mini. Websites, QR menus, video editing and digital solutions for local businesses.">
+
+    <link rel="icon" href="favicon.png">
+
+    <style>
+
+        /* ==============================
+           HYPERX MINI — PROJECT PAGE
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(255, 106, 0, 0.10),
+                    transparent 35%
+                ),
+                #0f0b08;
+
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        .navbar {
+            width: 100%;
+            padding: 20px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(18, 13, 9, 0.92);
+
+            border-bottom:
+                1px solid rgba(214, 160, 100, 0.12);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #d6a064;
+        }
+
+        .back-btn {
+            color: #d6a064;
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border: 1px solid
+                rgba(214, 160, 100, 0.3);
+
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #d6a064;
+            color: #120d09;
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           MAIN
+        ============================== */
+
+        .project-section {
+            min-height: calc(100vh - 80px);
+
+            padding: 75px 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+
+        .project-wrapper {
+            width: min(1050px, 100%);
+
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+
+            gap: 45px;
+
+            align-items: center;
+        }
+
+
+        /* ==============================
+           LEFT CONTENT
+        ============================== */
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .small-label {
+            display: inline-block;
+
+            color: #ff7a18;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .project-content h1 {
+            font-size: clamp(38px, 5vw, 62px);
+
+            line-height: 1.05;
+
+            margin-bottom: 22px;
+        }
+
+        .project-content h1 span {
+            color: #d6a064;
+        }
+
+        .project-content > p {
+            color: #b9aaa0;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            max-width: 500px;
+        }
+
+
+        /* ==============================
+           SERVICE POINTS
+        ============================== */
+
+        .service-points {
+            margin-top: 30px;
+
+            display: grid;
+
+            gap: 13px;
+        }
+
+        .service-point {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            color: #ddd3cb;
+
+            font-size: 15px;
+        }
+
+        .point-icon {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            background:
+                rgba(214, 160, 100, 0.10);
+
+            border:
+                1px solid rgba(214, 160, 100, 0.20);
+
+            border-radius: 10px;
+        }
+
+
+        /* ==============================
+           FORM CARD
+        ============================== */
+
+        .form-card {
+            position: relative;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1c1410,
+                    #100c09
+                );
+
+            border:
+                1px solid rgba(214, 160, 100, 0.22);
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.45);
+        }
+
+        .form-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 12%;
+            right: 12%;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #ff6a00,
+                    #d6a064,
+                    #ff6a00,
+                    transparent
+                );
+
+            box-shadow:
+                0 0 18px
+                rgba(255, 106, 0, 0.45);
+        }
+
+        .form-card h2 {
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+        .form-card .form-subtitle {
+            color: #968981;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           FORM
+        ============================== */
+
+        .project-form {
+            display: flex;
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .input-group label {
+            color: #d9cec5;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+        .project-form input,
+        .project-form select,
+        .project-form textarea {
+
+            width: 100%;
+
+            padding: 14px 15px;
+
+            background: #0d0907;
+
+            color: #fff;
+
+            border:
+                1px solid rgba(214, 160, 100, 0.18);
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.25s ease;
+        }
+
+        .project-form input::placeholder,
+        .project-form textarea::placeholder {
+            color: #71675f;
+        }
+
+        .project-form input:focus,
+        .project-form select:focus,
+        .project-form textarea:focus {
+
+            border-color: #d6a064;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(214, 160, 100, 0.08);
+        }
+
+        .project-form select {
+            cursor: pointer;
+        }
+
+        .project-form select option {
+            background: #17100c;
+            color: #fff;
+        }
+
+        .project-form textarea {
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+
+        /* ==============================
+           WHATSAPP BUTTON
+        ============================== */
+
+        .whatsapp-submit {
+
+            width: 100%;
+
+            min-height: 54px;
+
+            margin-top: 5px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            background: #25d366;
+
+            color: #fff;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .whatsapp-submit:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(37, 211, 102, 0.20);
+        }
+
+        .whatsapp-submit:active {
+            transform: scale(0.98);
+        }
+
+
+        /* ==============================
+           NOTE
+        ============================== */
+
+        .form-note {
+
+            margin-top: 13px;
+
+            text-align: center;
+
+            color: #756b64;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+
+            padding: 25px 20px;
+
+            text-align: center;
+
+            color: #756b64;
+
+            font-size: 13px;
+
+            border-top:
+                1px solid rgba(214, 160, 100, 0.10);
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 850px) {
+
+            .project-wrapper {
+
+                grid-template-columns: 1fr;
+
+                max-width: 650px;
+
+                gap: 25px;
+            }
+
+            .project-content {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .project-content > p {
+                margin: auto;
+            }
+
+            .service-points {
+                text-align: left;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 16px 18px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .back-btn {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
+
+            .project-section {
+                padding: 45px 14px;
+            }
+
+            .project-content h1 {
+                font-size: 40px;
+            }
+
+            .project-content > p {
+                font-size: 15px;
+            }
+
+            .form-card {
+                padding: 24px 18px;
+                border-radius: 19px;
+            }
+
+            .form-card h2 {
+                font-size: 24px;
+            }
+
+            .project-form input,
+            .project-form select,
+            .project-form textarea {
+                font-size: 16px;
+            }
+
+        }
+
+
+        @media (max-width: 380px) {
+
+            .project-content h1 {
+                font-size: 34px;
+            }
+
+            .form-card {
+                padding: 21px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         NAVBAR
+    ============================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                HyperX <span>Mini</span>
+            </div>
+
+            <a href="index.html" class="back-btn">
+                ← Back to Website
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==============================
+         PROJECT SECTION
+    ============================== -->
+
+    <main>
+
+        <section class="project-section">
+
+            <div class="project-wrapper">
+
+
+                <!-- LEFT -->
+
+                <div class="project-content">
+
+                    <span class="small-label">
+                        Let's Work Together
+                    </span>
+
+                    <h1>
+                        Start Your
+                        <span>Project.</span>
+                    </h1>
+
+                    <p>
+                        Tell us what your business needs.
+                        We'll discuss your requirements and
+                        help you choose the right digital solution.
+                    </p>
+
+
+                    <div class="service-points">
+
+                        <div class="service-point">
+
+                            <span class="point-icon">
+                                🌐
+                            </span>
+
+                            <span>
+                                Modern Business Websites
+                            </span>
+
+                        </div>
+
+
+                        <div class="service-point">
+
+                            <span class="point-icon">
+                                📱
+                            </span>
+
+                            <span>
+                                QR Menus & Digital Solutions
+                            </span>
+
+                        </div>
+
+
+                        <div class="service-point">
+
+                            <span class="point-icon">
+                                🎬
+                            </span>
+
+                            <span>
+                                Promotional Video Editing
+                            </span>
+
+                        </div>
+
+
+                        <div class="service-point">
+
+                            <span class="point-icon">
+                                📈
+                            </span>
+
+                            <span>
+                                Digital Growth Solutions
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <div class="form-card">
+
+                    <h2>
+                        Project Enquiry
+                    </h2>
+
+                    <p class="form-subtitle">
+                        Fill in the details below and
+                        we'll continue the conversation on WhatsApp.
+                    </p>
+
+
+                    <form
+                        class="project-form"
+                        id="projectForm"
+                    >
+
+
+                        <!-- NAME -->
+
+                        <div class="input-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PHONE -->
+
+                        <div class="input-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- BUSINESS -->
+
+                        <div class="input-group">
+
+                            <label for="business">
+                                Business Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="business"
+                                placeholder="e.g. The Coffee House"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- BUSINESS TYPE -->
+
+                        <div class="input-group">
+
+                            <label for="businessType">
+                                Business Type
+                            </label>
+
+                            <select
+                                id="businessType"
+                                required
+                            >
+
+                                <option value="" disabled selected>
+                                    Select your business
+                                </option>
+
+                                <option value="Cafe / Restaurant">
+                                    ☕ Cafe / Restaurant
+                                </option>
+
+                                <option value="Salon / Parlour">
+                                    💇 Salon / Parlour
+                                </option>
+
+                                <option value="Gym / Fitness">
+                                    🏋️ Gym / Fitness
+                                </option>
+
+                                <option value="Other Business">
+                                    🏢 Other Business
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SERVICE -->
+
+                        <div class="input-group">
+
+                            <label for="service">
+                                What do you need?
+                            </label>
+
+                            <select
+                                id="service"
+                                required
+                            >
+
+                                <option value="" disabled selected>
+                                    Select a service
+                                </option>
+
+                                <option value="Business Website">
+                                    🌐 Business Website
+                                </option>
+
+                                <option value="QR Digital Menu">
+                                    📱 QR Digital Menu
+                                </option>
+
+                                <option value="Video Editing">
+                                    🎬 Video Editing
+                                </option>
+
+                                <option value="Social Media Promotion">
+                                    📲 Social Media Promotion
+                                </option>
+
+                                <option value="Multiple Services">
+                                    🚀 Multiple Services
+                                </option>
+
+                                <option value="Not Sure">
+                                    💡 Not Sure Yet
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- DETAILS -->
+
+                        <div class="input-group">
+
+                            <label for="details">
+                                Project Details
+                            </label>
+
+                            <textarea
+                                id="details"
+                                placeholder="Tell us what you want to build..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="whatsapp-submit"
+                        >
+                            💬 Send Enquiry on WhatsApp
+                        </button>
+
+
+                    </form>
+
+
+                    <p class="form-note">
+                        Your enquiry will open directly in WhatsApp.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 HyperX Mini — Digital Solutions for Modern Businesses
+
+    </footer>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        document
+            .getElementById("projectForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name")
+                        .value.trim();
+
+                const phone =
+                    document.getElementById("phone")
+                        .value.trim();
+
+                const business =
+                    document.getElementById("business")
+                        .value.trim();
+
+                const businessType =
+                    document.getElementById("businessType")
+                        .value;
+
+                const service =
+                    document.getElementById("service")
+                        .value;
+
+                const details =
+                    document.getElementById("details")
+                        .value.trim();
+
+
+                const message =
+
+                    "Hello HyperX Mini! 👋\n\n" +
+
+                    "*NEW PROJECT ENQUIRY*\n\n" +
+
+                    "Name: " +
+                    name +
+                    "\n" +
+
+                    "Phone: " +
+                    phone +
+                    "\n" +
+
+                    "Business: " +
+                    business +
+                    "\n" +
+
+                    "Business Type: " +
+                    businessType +
+                    "\n" +
+
+                    "Service Required: " +
+                    service +
+                    "\n\n" +
+
+                    "*Project Details:*\n" +
+                    details;
+
+
+                const whatsappURL =
+
+                    "https://wa.me/918726601795?text=" +
+
+                    encodeURIComponent(message);
+
+
+                window.open(
+                    whatsappURL,
+                    "_blank"
+                );
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>

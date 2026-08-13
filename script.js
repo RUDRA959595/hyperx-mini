@@ -1,150 +1,153 @@
-// ==============================
-// HYPERX MINI - MAIN JAVASCRIPT
-// ==============================
+// =========================================================
+// HYPERX MINI — MAIN JAVASCRIPT
+// =========================================================
 
 
-// ==============================
-// SMOOTH SCROLLING
-// ==============================
+// =========================================================
+// 1. SMOOTH SCROLLING
+// =========================================================
 
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", (event) => {
 
-        const target = document.querySelector(
-            this.getAttribute("href")
-        );
+        const href = link.getAttribute("href");
 
-        if (target) {
+        if (!href || href === "#") return;
 
-            e.preventDefault();
+        const target = document.querySelector(href);
 
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+        if (!target) return;
 
-        }
+        event.preventDefault();
+
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
 
     });
 
 });
 
 
-// ==============================
-// SCROLL ANIMATIONS
-// ==============================
+// =========================================================
+// 2. SCROLL REVEAL ANIMATIONS
+// =========================================================
 
-const elements = document.querySelectorAll(
-    ".card, .pricing-card, .hero-card"
-);
-
-const observer = new IntersectionObserver(
-
-    function (entries) {
-
-        entries.forEach(function (entry) {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold: 0.15
-    }
-
+const revealElements = document.querySelectorAll(
+    ".card, .pricing-card, .step-card, .about-box, .hero-card, .contact-form"
 );
 
 
-elements.forEach(function (element) {
+const revealStyle = document.createElement("style");
 
-    observer.observe(element);
+revealStyle.textContent = `
 
-});
-
-
-// ==============================
-// ANIMATION CSS
-// ==============================
-
-const style = document.createElement("style");
-
-style.textContent = `
-
-.card,
-.pricing-card,
-.hero-card {
-
+.reveal-ready {
     opacity: 0;
-
-    transform: translateY(40px);
-
+    transform: translateY(28px);
     transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-
+        opacity 0.65s ease,
+        transform 0.65s ease;
 }
 
-.card.show,
-.pricing-card.show,
-.hero-card.show {
-
+.reveal-ready.show {
     opacity: 1;
-
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-ready {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 
 }
 
 `;
 
-document.head.appendChild(style);
+document.head.appendChild(revealStyle);
 
 
-// ==============================
-// PLAN BUTTONS
-// ==============================
+revealElements.forEach((element) => {
+    element.classList.add("reveal-ready");
+});
+
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    revealElements.forEach((element) => {
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach((element) => {
+        element.classList.add("show");
+    });
+
+}
+
+
+// =========================================================
+// 3. PLAN SELECTION
+// =========================================================
 
 const planButtons =
     document.querySelectorAll("[data-plan]");
 
+const planInput =
+    document.querySelector("#plan");
 
-planButtons.forEach(function (button) {
+const contactForm =
+    document.querySelector("#contactForm");
 
-    button.addEventListener("click", function () {
+
+planButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
 
         const selectedPlan =
-            this.getAttribute("data-plan");
-
-        const planInput =
-            document.querySelector("#plan");
-
-        const contactForm =
-            document.querySelector("#contactForm");
-
+            button.getAttribute("data-plan");
 
         if (planInput) {
-
             planInput.value = selectedPlan;
-
         }
 
 
         if (contactForm) {
 
-            setTimeout(function () {
+            setTimeout(() => {
 
                 contactForm.scrollIntoView({
                     behavior: "smooth",
                     block: "center"
                 });
 
-            }, 100);
+            }, 150);
 
         }
 
@@ -153,53 +156,66 @@ planButtons.forEach(function (button) {
 });
 
 
-// ==============================
-// WHATSAPP CONTACT FORM
-// ==============================
+// =========================================================
+// 4. WHATSAPP CONTACT FORM
+// =========================================================
 
-const form =
-    document.querySelector("#contactForm");
+if (contactForm) {
 
+    contactForm.addEventListener("submit", (event) => {
 
-if (form) {
-
-    form.addEventListener("submit", function (e) {
-
-        e.preventDefault();
+        event.preventDefault();
 
 
         const name =
-            document.querySelector("#name").value.trim();
+            document.querySelector("#name")?.value.trim();
 
         const phone =
-            document.querySelector("#phone").value.trim();
+            document.querySelector("#phone")?.value.trim();
 
         const business =
-            document.querySelector("#business").value.trim();
+            document.querySelector("#business")?.value.trim();
 
         const plan =
-            document.querySelector("#plan").value.trim();
+            document.querySelector("#plan")?.value.trim();
 
         const details =
-            document.querySelector("#details").value.trim();
+            document.querySelector("#details")?.value.trim();
 
 
-        // Check selected plan
+        // -----------------------------------------
+        // VALIDATION
+        // -----------------------------------------
 
-        if (!plan) {
+        if (!name || !phone || !business || !details) {
 
-            alert("Please select a service or plan first.");
+            alert(
+                "Please fill in all required fields."
+            );
 
             return;
 
         }
 
 
-        // WhatsApp message
+        if (!plan) {
+
+            alert(
+                "Please select a service or plan first."
+            );
+
+            return;
+
+        }
+
+
+        // -----------------------------------------
+        // WHATSAPP MESSAGE
+        // -----------------------------------------
 
         const message =
 
-            "Hello HyperX Mini!\n\n" +
+            "Hello HyperX Mini! 👋\n\n" +
 
             "*New Project Enquiry*\n\n" +
 
@@ -215,11 +231,11 @@ if (form) {
             business +
             "\n" +
 
-            "Selected Plan: " +
+            "Selected Service: " +
             plan +
             "\n\n" +
 
-            "Project Details:\n" +
+            "*Project Details:*\n" +
             details;
 
 
@@ -230,7 +246,9 @@ if (form) {
             encodeURIComponent(message);
 
 
-        // Open WhatsApp
+        // -----------------------------------------
+        // OPEN WHATSAPP
+        // -----------------------------------------
 
         window.open(
             whatsappURL,
@@ -238,23 +256,25 @@ if (form) {
         );
 
 
-        // Open success page
+        // -----------------------------------------
+        // SUCCESS PAGE
+        // -----------------------------------------
 
-        setTimeout(function () {
+        setTimeout(() => {
 
             window.location.href =
                 "success.html";
 
-        }, 500);
+        }, 700);
 
     });
 
 }
 
 
-// ==============================
-// TERMS & CONDITIONS MODAL
-// ==============================
+// =========================================================
+// 5. TERMS & CONDITIONS MODAL
+// =========================================================
 
 const termsModal =
     document.querySelector("#termsModal");
@@ -269,62 +289,73 @@ const closeTermsBottom =
     document.querySelector("#closeTermsBottom");
 
 
+function openTermsModal() {
+
+    if (!termsModal) return;
+
+    termsModal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeTermsModal() {
+
+    if (!termsModal) return;
+
+    termsModal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
 // OPEN
 
-if (openTerms && termsModal) {
+if (openTerms) {
 
-    openTerms.addEventListener("click", function () {
-
-        termsModal.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
-    });
+    openTerms.addEventListener(
+        "click",
+        openTermsModal
+    );
 
 }
 
 
-// CLOSE - X BUTTON
+// CLOSE X
 
-if (closeTerms && termsModal) {
+if (closeTerms) {
 
-    closeTerms.addEventListener("click", function () {
-
-        termsModal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-    });
+    closeTerms.addEventListener(
+        "click",
+        closeTermsModal
+    );
 
 }
 
 
-// CLOSE - BOTTOM BUTTON
+// CLOSE BUTTON
 
-if (closeTermsBottom && termsModal) {
+if (closeTermsBottom) {
 
-    closeTermsBottom.addEventListener("click", function () {
-
-        termsModal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-    });
+    closeTermsBottom.addEventListener(
+        "click",
+        closeTermsModal
+    );
 
 }
 
 
-// CLOSE - CLICK OUTSIDE
+// CLOSE OUTSIDE
 
 if (termsModal) {
 
-    termsModal.addEventListener("click", function (e) {
+    termsModal.addEventListener("click", (event) => {
 
-        if (e.target === termsModal) {
+        if (event.target === termsModal) {
 
-            termsModal.classList.remove("active");
-
-            document.body.style.overflow = "";
+            closeTermsModal();
 
         }
 
@@ -333,16 +364,55 @@ if (termsModal) {
 }
 
 
-// CLOSE - ESC KEY
+// =========================================================
+// 6. ESC KEY
+// =========================================================
 
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", (event) => {
 
-    if (e.key === "Escape" && termsModal) {
+    if (event.key === "Escape") {
 
-        termsModal.classList.remove("active");
-
-        document.body.style.overflow = "";
+        closeTermsModal();
 
     }
 
 });
+
+
+// =========================================================
+// 7. BUTTON PRESS FEEDBACK
+// =========================================================
+
+document
+    .querySelectorAll("button, .btn, .price-button")
+    .forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            button.style.transform =
+                "scale(0.97)";
+
+            setTimeout(() => {
+
+                button.style.transform = "";
+
+            }, 120);
+
+        });
+
+    });
+
+
+// =========================================================
+// 8. CURRENT YEAR
+// =========================================================
+
+const footerText =
+    document.querySelector("footer p");
+
+if (footerText) {
+
+    footerText.innerHTML =
+        `© ${new Date().getFullYear()} HyperX Mini — Helping Businesses Grow Digitally`;
+
+}
